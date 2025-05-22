@@ -1,0 +1,44 @@
+<%- include('partials/header.ejs') %>
+
+<section id="movie">
+    <% if (title) { %>
+  <div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis" id="titleToGet"><%= title %></h1>
+        <p class="lead"><%= plot %></p>
+
+      <form method="post" action="/movies">
+        <input type="hidden" name="yourTitle" value="<%= title %>">
+        <ul class="list-group list-group-flush mt-4">
+          <li class="list-group-item"><strong>Director:</strong> <%= director %></li>
+          <li class="list-group-item"><strong>Actors:</strong> <%= actors %></li>
+          <li class="list-group-item"><strong>Genre:</strong> <%= genre %></li>
+          <li class="list-group-item"><strong>Duration:</strong> <%= duration %></li>
+          <li class="list-group-item"><strong>IMDB Rating:</strong>⭐ <%= rating %></li>
+          <li class="list-group-item"><strong>Year:</strong> <%= year %></li>
+
+          <li class="list-group-item">
+            <label for="yourRating" class="label"><strong>Your Rating:</strong></label>
+            <input type="number" min="0" max="10" name="yourRating" placeholder="0-10" required>
+          </li>
+          <li class="list-group-item">
+            <input type="submit" value="Add to List" class="add-btn">
+          </li>
+        </ul>
+      </form> 
+
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden text-center">
+        <img class="rounded-lg-3 img-fluid" src="<%= poster %>" alt="<%= title %> poster" style="max-height: 444px;">
+      </div>
+    </div>
+  </div>
+<% } else { %>
+  <div class="container my-5">
+    <p class="text-muted">No movie data available.</p>
+  </div>
+<% } %>
+</section>
+
+<%- include('partials/footer.ejs') %>

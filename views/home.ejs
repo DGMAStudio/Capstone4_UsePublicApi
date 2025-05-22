@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs') %>
+
+<section id="static-section">
+    <div class="px-4 py-5 my-5 text-center">  
+        <h1 class="fw-bold home-heading">🎬WELCOME🎬</h1> 
+        <div class="col-lg-6 mx-auto"> 
+            <p class="lead mb-4">
+                
+            </p> 
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <form class="col-12 col-lg-auto mb-lg-0 me-lg-3" role="search" action="/searchmovie" method="post">
+                    <div>
+                        <input type="search" size="80" class="search-im" placeholder="Search Movie Title..." aria-label="Search" name="search">
+                    </div> 
+                </form>
+            </div> 
+        </div> 
+    </div>
+</section>
+
+<%- include('partials/footer.ejs') %>

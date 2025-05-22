@@ -1,0 +1,14 @@
+<%- include('partials/header.ejs') %>
+
+<div class="update-section">
+  <h1>Update Rating for <%= movie.title %></h1>
+  <form action="/update" method="POST">
+    <input type="hidden" name="yourTitle" value="<%= movie.title %>">
+    <label for="updateRating">New Rating:</label>
+    <input type="number" step="0.1" min="0" max="10" name="updateRating" value="<%= movie.yourRating || '' %>" required>
+    <button type="submit">Update</button>
+  </form>
+  <p><a href="/movies">Back to Movies</a></p>
+</div>
+
+<%- include('partials/footer.ejs') %>
